@@ -3,31 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f6f7fb" />
-    <meta name="description" content="İlan bilgilerini düzenleyip müşterilerinizle paylaşabileceğiniz sunum sayfası oluşturun." />
-    <title>İlanSunum — İlanınızı sunuma dönüştürün</title>
+    <meta name="theme-color" content="#f3f5f9" />
+    <meta name="description" content="Emlak daire ilanı için müşteriye özel sunum oluşturun." />
+    <title>EmlakSunum | Daire İlan Sunumu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div id="app">
       <header class="topbar">
-        <a class="brand" href="./" aria-label="İlanSunum ana sayfa"><span class="brand-icon">İ</span><span>ilan<span class="brand-light">sunum</span></span></a>
-        <span class="topbar-note"><span class="secure-dot"></span> Müşterinize özel, şık sunumlar</span>
+        <a class="brand" href="#" aria-label="EmlakSunum ana sayfa">
+          <span class="brand-icon">E</span>
+          <span>emlak<span class="brand-light">sunum</span></span>
+        </a>
+        <span class="topbar-note"><span class="secure-dot"></span> Daire ilanınızı müşterinize özel sunum haline getirin</span>
       </header>
 
       <main class="builder-shell" id="builder">
         <section class="intro">
           <div class="intro-copy">
-            <div class="pill"><span class="sparkle">✦</span> İLANINIZI SUNUMA DÖNÜŞTÜRÜN</div>
-            <h1>İyi bir ilan,<br /><span>iyi sunulmayı hak eder.</span></h1>
-            <p>İlan metnini yapıştırın, bilgileri düzenleyin ve müşterinize gönderebileceğiniz özel bir sunum bağlantısı oluşturun.</p>
+            <div class="pill">✦ EMLAK DAİRE SUNUMU</div>
+            <h1>İlanı kopyala,<br /><span>sunum hazır olsun.</span></h1>
+            <p>İlan sayfasından bilgileri yapıştırın, fotoğrafları ekleyin, son düzenlemeyi yapın ve müşterinize özel paylaşımlı sunum bağlantısı oluşturun.</p>
           </div>
           <div class="stepper" aria-label="Sunum oluşturma adımları">
-            <div class="step active"><span>1</span><small>İlanı ekle</small></div><i></i>
-            <div class="step"><span>2</span><small>Düzenle</small></div><i></i>
+            <div class="step active"><span>1</span><small>İlanı ekle</small></div>
+            <i></i>
+            <div class="step"><span>2</span><small>Düzenle</small></div>
+            <i></i>
             <div class="step"><span>3</span><small>Paylaş</small></div>
           </div>
         </section>
@@ -35,45 +40,123 @@
         <section class="workspace">
           <div class="editor-column">
             <section class="panel import-panel">
-              <div class="panel-heading"><div><span class="section-number">01</span><h2>İlan bilgilerini aktarın</h2></div><span class="optional">Kopyala · Yapıştır</span></div>
-              <p class="field-help">İlan sayfasındaki metinleri seçip kopyalayın, aşağıdaki alana yapıştırın. Metindeki başlık, fiyat ve özellikleri otomatik ayıklamaya çalışırız.</p>
-              <div id="paste-area" class="paste-area" contenteditable="true" role="textbox" aria-label="Kopyalanan ilanı buraya yapıştırın" data-placeholder="İlan sayfasından kopyaladığınız içeriği buraya yapıştırın…"></div>
-              <div class="paste-actions"><span id="paste-status" class="status-text">İlan içeriğini bekliyor</span><button class="text-button" id="clear-paste" type="button">Temizle</button></div>
-              <div class="upload-row"><div class="upload-copy"><span class="upload-icon">＋</span><div><strong>Fotoğraf ekleyin</strong><small>Görselleri seçin veya panodan yapıştırın</small></div></div><label class="upload-button" for="photo-input">Fotoğraf seç</label><input id="photo-input" type="file" accept="image/*" multiple hidden /></div>
+              <div class="panel-heading">
+                <div><span class="section-number">01</span><h2>İlan bilgilerini yapıştırın</h2></div>
+                <span class="optional">Kopyala · Yapıştır</span>
+              </div>
+              <p class="field-help">Sahibinden veya emlak sitelerindeki ilan içeriğini kopyalayıp aşağıdaki alana yapıştırın. Başlık, fiyat, metrekare, oda sayısı ve özellikler otomatik tanınmaya çalışılır.</p>
+              <div id="paste-area" class="paste-area" contenteditable="true" role="textbox" aria-label="Kopyalanan ilanı buraya yapıştırın" data-placeholder="İlan sayfasındaki tüm metni buraya yapıştırın…"></div>
+              <div class="paste-actions">
+                <span id="paste-status" class="status-text">İlan içeriğini bekliyor</span>
+                <button class="text-button" id="clear-paste" type="button">Temizle</button>
+              </div>
+              <div class="upload-row">
+                <div class="upload-copy">
+                  <span class="upload-icon">＋</span>
+                  <div>
+                    <strong>Fotoğraf ekleyin</strong>
+                    <small>Görselleri seçin veya panodan yapıştırın</small>
+                  </div>
+                </div>
+                <label class="upload-button" for="photo-input">Fotoğraf seç</label>
+                <input id="photo-input" type="file" accept="image/*" multiple hidden />
+              </div>
             </section>
 
             <section class="panel details-panel">
-              <div class="panel-heading"><div><span class="section-number">02</span><h2>Sunum detaylarını düzenleyin</h2></div></div>
-              <div class="form-grid">
-                <label class="field field-wide">İlan başlığı<input id="title-input" type="text" placeholder="Örn. Merkezi konumda ferah 3+1 daire" /></label>
-                <label class="field">Fiyat<input id="price-input" type="text" placeholder="Örn. 5.450.000 TL" /></label>
-                <label class="field">Konum<input id="location-input" type="text" placeholder="İlçe, il" /></label>
-                <label class="field">İlan numarası <span class="muted-label">(isteğe bağlı)</span><input id="reference-input" type="text" placeholder="Örn. 123456789" /></label>
-                <label class="field">İletişim telefonu <span class="muted-label">(isteğe bağlı)</span><input id="phone-input" type="tel" placeholder="05xx xxx xx xx" /></label>
-                <label class="field field-wide">Öne çıkan özellikler <span class="muted-label">Her satıra bir özellik</span><textarea id="features-input" rows="4" placeholder="3+1&#10;Brüt 145 m²&#10;4. kat"></textarea></label>
-                <label class="field field-wide">Açıklama<textarea id="description-input" rows="5" placeholder="İlan açıklamasını buraya ekleyin…"></textarea></label>
+              <div class="panel-heading">
+                <div><span class="section-number">02</span><h2>Sunum detaylarını düzenleyin</h2></div>
               </div>
-              <div class="form-footnote"><span>ⓘ</span> Paylaşım bağlantısını oluşturmadan önce bilgilerin doğruluğunu kontrol edin.</div>
+
+              <div class="form-grid">
+                <label class="field field-wide">İlan başlığı<input id="title-input" type="text" placeholder="Örn. 3+1 modern daire, Kadıköy" /></label>
+                <label class="field">Fiyat<input id="price-input" type="text" placeholder="Örn. 7.950.000 TL" /></label>
+                <label class="field">Konum<input id="location-input" type="text" placeholder="Örn. Kadıköy / İstanbul" /></label>
+                <label class="field">Oda sayısı<input id="rooms-input" type="text" placeholder="Örn. 3+1" /></label>
+                <label class="field">Metrekare<input id="sqm-input" type="text" placeholder="Örn. 145 m²" /></label>
+                <label class="field">Kat / apartman<input id="floor-input" type="text" placeholder="Örn. 10. kat / 3 katlı" /></label>
+                <label class="field">Bina yaşı<input id="age-input" type="text" placeholder="Örn. 5 yaşında" /></label>
+                <label class="field">İlan numarası<input id="reference-input" type="text" placeholder="Örn. 34576891" /></label>
+                <label class="field">İletişim telefonu<input id="phone-input" type="tel" placeholder="05xx xxx xx xx" /></label>
+                <label class="field field-wide">Öne çıkan özellikler<span class="muted-label">Her satıra bir özellik</span><textarea id="features-input" rows="5" placeholder="Asansör&#10;Güvenlik&#10;Krediye uygun&#10;Site içi park&#10;Balkon&#10;Mutfak doğramalı"></textarea></label>
+                <label class="field field-wide">Açıklama<textarea id="description-input" rows="6" placeholder="İlan açıklamasını buraya yazın..."></textarea></label>
+              </div>
+
+              <div class="form-footnote"><span>ⓘ</span> Oluştur düğmesine basmadan önce satırları kontrol edin.</div>
             </section>
           </div>
 
           <aside class="preview-column">
-            <div class="preview-top"><div><span class="live-dot"></span><strong>Canlı önizleme</strong></div><span class="device-label">Müşteriniz böyle görecek</span></div>
+            <div class="preview-top">
+              <div><span class="live-dot"></span><strong>Canlı önizleme</strong></div>
+              <span class="device-label">Müşteriniz böyle görecek</span>
+            </div>
+
             <article class="listing-card" id="preview-card">
-              <div class="preview-image" id="preview-image-wrap"><img id="preview-image" alt="İlan fotoğrafı önizlemesi" /><div class="image-placeholder" id="image-placeholder"><span>⌂</span><strong>İlan fotoğraflarınız</strong><small>Eklediğiniz görseller burada görünür</small></div><span id="photo-count" class="photo-count" hidden></span><button id="gallery-prev" class="gallery-arrow prev" type="button" aria-label="Önceki fotoğraf" hidden>‹</button><button id="gallery-next" class="gallery-arrow next" type="button" aria-label="Sonraki fotoğraf" hidden>›</button></div>
-              <div class="listing-content"><div class="preview-location" id="preview-location">⌖ <span>Konum bilgisi</span></div><h3 id="preview-title">İlan başlığınız burada görünecek</h3><div class="preview-price" id="preview-price">Fiyat bilgisi</div><div class="preview-features" id="preview-features"><span>Özellikleriniz burada</span></div><p class="preview-description" id="preview-description">İlan açıklaması burada müşterinize sunulacak.</p><div class="preview-agent"><div class="agent-avatar">İ</div><div><strong>İlan hakkında bilgi alın</strong><small>Detaylar için iletişime geçin</small></div><a id="preview-call" class="call-button" href="#" hidden>Ara</a></div></div>
-              <div class="preview-reference" id="preview-reference" hidden></div>
+              <div class="preview-image" id="preview-image-wrap">
+                <img id="preview-image" alt="İlan fotoğrafı önizlemesi" />
+                <div class="image-placeholder" id="image-placeholder">
+                  <span>⌂</span>
+                  <strong>İlan fotoğraflarınız</strong>
+                  <small>Eklediğiniz görseller burada görünür</small>
+                </div>
+                <span id="photo-count" class="photo-count" hidden></span>
+                <button id="gallery-prev" class="gallery-arrow prev" type="button" aria-label="Önceki fotoğraf" hidden>‹</button>
+                <button id="gallery-next" class="gallery-arrow next" type="button" aria-label="Sonraki fotoğraf" hidden>›</button>
+              </div>
+
+              <div class="listing-content">
+                <div class="meta-row">
+                  <span class="mini-tag" id="preview-rooms">3+1</span>
+                  <span class="mini-tag light" id="preview-sqm">145 m²</span>
+                  <span class="mini-tag light" id="preview-floor">10. kat</span>
+                </div>
+
+                <div class="preview-location" id="preview-location">⌖ <span>Konum bilgisi</span></div>
+                <h3 id="preview-title">Daire başlığı burada görünecek</h3>
+                <div class="preview-price" id="preview-price">Fiyat bilgisi</div>
+
+                <div class="preview-features" id="preview-features">
+                  <span>Özellikler</span>
+                </div>
+
+                <div class="summary-grid">
+                  <div class="summary-box"><small>Bina yaşı</small><strong id="preview-age">-</strong></div>
+                  <div class="summary-box"><small>Durum</small><strong>Krediye uygun</strong></div>
+                  <div class="summary-box"><small>İlan No</small><strong id="preview-reference">-</strong></div>
+                </div>
+
+                <p class="preview-description" id="preview-description">Daire açıklaması burada müşterinize sunulacak.</p>
+
+                <div class="preview-agent">
+                  <div class="agent-avatar">E</div>
+                  <div>
+                    <strong>İlan hakkında bilgi alın</strong>
+                    <small>Detaylar için iletişime geçin</small>
+                  </div>
+                  <a id="preview-call" class="call-button" href="#" hidden>Ara</a>
+                </div>
+              </div>
             </article>
-            <button id="publish-button" class="publish-button" type="button"><span>Sunumu oluştur</span><span class="button-arrow">→</span></button>
+
+            <button id="publish-button" class="publish-button" type="button">
+              <span>Sunumu oluştur</span>
+              <span class="button-arrow">→</span>
+            </button>
             <p class="privacy-note">Bağlantıya sahip olan kişiler sunumu görüntüleyebilir.</p>
           </aside>
         </section>
-        <footer class="builder-footer"><span>ilan<span class="brand-light">sunum</span></span><span>İlan bilgilerini düzenleyin, güvenle sunun.</span></footer>
+
+        <footer class="builder-footer">
+          <span>emlak<span class="brand-light">sunum</span></span>
+          <span>İlan bilgilerini düzenleyin, güvenle sunun.</span>
+        </footer>
       </main>
 
       <main id="presentation" class="presentation-view" hidden></main>
       <div id="toast" class="toast" role="status" aria-live="polite"></div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

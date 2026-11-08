@@ -1,33 +1,37 @@
-# İlanSunum
+# EmlakSunum
 
-İlan metnini yapıştırıp düzenleyerek müşterilerle paylaşılabilir bir ilan sunumu bağlantısı oluşturmak için hazırlanan web tabanlı demo.
+Emlak daire ilanlarını müşteriye özel, paylaşılabilir bir sunuma dönüştürmek için hazırlanan statik web uygulaması.
 
 ## Özellikler
 
-- Kopyalanan ilan metninden başlık, fiyat ve bazı özellikleri otomatik ayıklamaya çalışır.
-- Fotoğraflar dosya olarak seçilebilir veya panodan yapıştırılabilir; görseller tarayıcıda küçültülür.
-- Sunum önizlemesi, başlık, fiyat, konum, açıklama, özellikler ve iletişim bilgileri düzenlenebilir.
-- Oluşturulan paylaşım bağlantısı, ilan verilerini URL içinde taşır; sunumu açmak için bir hesap gerekmez.
-- Mobil uyumlu tasarım ve sunum fotoğraf galerisi.
+- Sahiplenmiş ilan verilerini kopyalayıp yapıştırma alanına aktarabilirsiniz.
+- Fiyat, konum, oda sayısı, metrekare, kat ve ilan numarası için özel alanlar vardır.
+- Fotoğraflar dosyadan seçilebilir ya da panodan yapılabilir.
+- Sunum önizlemesi canlı güncellenir.
+- “Sunumu oluştur” düğmesi ile müşteriye gönderilebilecek tek bir bağlantı üretir.
 
 ## Çalıştırma
-
-Statik dosyaları bir web sunucusunda yayınlayın. Yerelde hızlıca denemek için:
 
 ```bash
 python -m http.server 8000
 ```
 
-Ardından `http://localhost:8000` adresini açın. GitHub Pages ile yayınlamak için depoda **Settings → Pages → Deploy from a branch → main → /(root)** seçin.
+Sonrasında tarayıcıda şu adresi açın:
+
+```text
+http://localhost:8000
+```
+
+GitHub Pages için `Settings > Pages > Deploy from a branch > main > /root` seçerek yayınlayabilirsiniz.
 
 ## Kullanım
 
-1. İlan sayfasından kopyaladığınız içeriği yapıştırma alanına yapıştırın. Tarayıcı panoya ilan fotoğraflarını koyduysa, görsel adresleri de alınabilir; aksi halde fotoğrafları ayrıca seçin veya panodan yapıştırın.
-2. Otomatik doldurulan alanları ve fotoğrafları kontrol edip düzenleyin.
-3. **Sunumu oluştur** düğmesine basıp bağlantıyı kopyalayın.
+1. Emlak ilanı sayfasını ziyaret edip bilgileri kopyalayın.
+2. Yapıştırma alanına yapıştırın.
+3. Fotoğrafları ekleyin.
+4. Alanları kontrol edip düzenleyin.
+5. “Sunumu oluştur” butonunu kullanarak bağlantıyı kopyalayın.
 
-## Önemli sınırlar
+## Not
 
-Bu sürüm tamamen statik ve sunucusuz bir başlangıç sürümüdür. Sunum bilgileri bağlantının içine kodlanır; gerçek bir veritabanına kaydedilmez. Fotoğraflar da bağlantıya gömüldüğünden çok büyük bağlantılar oluşabilir; görseller tarayıcıda sıkıştırılır ve bağlantı için boyut sınırı uygulanır. Kalıcı kayıt, özel alan adı, yönetim paneli, parola/erişim kontrolü, bağlantı silme ve büyük fotoğraflar için depolama gerekiyorsa bir backend ve nesne depolama servisi eklenmelidir.
-
-Otomatik ilan okuma, ilan sayfasının panoya kopyaladığı içeriğe bağlıdır. Bazı siteler kopyalanan içerikte görsel veya ilan özelliklerini vermeyebilir; bu durumda alanları elle düzenleyip fotoğrafları ayrıca yükleyebilirsiniz. Bu araç ilan sayfalarını arka planda taramaz ve oturum açma bilgisi istemez. İlan içeriğini ve görselleri paylaşmaya yetkili olduğunuzdan emin olun.
+Bu sürüm statik ve sunucusuzdur; ilan bilgileri URL içinde paylaşılacak şekilde kodlanır. Gerçek bir veritabanı veya kullanıcı hesabı sistemi içermez.
